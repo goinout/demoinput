@@ -1,0 +1,27 @@
+hash: 6d3e05e5152d2c8424541ab36571710297848cd59488da6492df2732c953bdfe
+updated: 2017-06-26T10:49:03.8425729+08:00
+imports:
+- name: github.com/drkaka/lg
+  version: 2da913ec4fcfd0f6774de89b4e24a5200a1845b2
+- name: github.com/drkaka/ulid
+  version: a4078d88d430f7f5c443e60820664d0eef7a1cc8
+- name: github.com/fsnotify/fsnotify
+  version: 629574ca2a5df945712d3079857300b5e4da0236
+- name: github.com/goinout/goinout
+  version: 28e98773e783c21cdc65fa27e3216de8e3aceba4
+- name: go.uber.org/atomic
+  version: 4e336646b2ef9fc6e47be8e21594178f98e5ebcf
+- name: go.uber.org/zap
+  version: 9cabc84638b70e564c3dab2766efcb1ded2aac9f
+  subpackages:
+  - buffer
+  - internal/bufferpool
+  - internal/color
+  - internal/exit
+  - internal/multierror
+  - zapcore
+- name: golang.org/x/sys
+  version: c23410a886927bab8ca5e80b08af6a56faeb330d
+  subpackages:
+  - unix
+testImports: []
