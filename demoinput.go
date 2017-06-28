@@ -2,18 +2,19 @@ package main
 
 import (
 	"context"
-	"fmt"
+	"log"
 )
 
 func stop() {
-	fmt.Println("demoinput stopped")
+	log.Println("demoinput stopped")
 }
 
 // Exchange contexts with host
-func Exchange(ctx context.Context) context.Context {
+func Exchange(ctx interface{}) interface{} {
+	c := ctx.(context.Context)
 	go func() {
 		select {
-		case <-ctx.Done():
+		case <-c.Done():
 			// listen for the host cancel signal
 			stop()
 		}
@@ -25,15 +26,15 @@ func Exchange(ctx context.Context) context.Context {
 
 // Start the input
 func Start(getOutput func(string) func(map[string]interface{}) error) {
-	fmt.Println("demoinput started")
+	log.Println("demoinput started")
 	fn := getOutput("demoouput")
 	if fn == nil {
-		fmt.Println("demooutput can't be found")
+		log.Println("demooutput can't be found")
 	} else {
 		demoParam := make(map[string]interface{})
 		demoParam["demo"] = "hello"
 
 		err := fn(demoParam)
-		fmt.Println("err:", err)
+		log.Println("err:", err)
 	}
 }
